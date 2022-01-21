@@ -4,27 +4,25 @@
 * By: Timothy Tamm
 */
 
-#include <stdio.h>
-#include <cs50.h>
+// edit proposed by Arka Saha
 
-// function prototype
-void print_name_and_age(string name, int age);
+#include <stdio.h>
+
+void print_name_age(char name[], int age);
+char name[]="";
+int age;
 
 int main(void)
 {
-    // ask the user for input
-    printf("What is your name?\n");
-    string name = get_string();
-    
-    printf("How old are you?\n");
-    int age = get_int();
-    
-    // print the input
-    print_name_and_age(name, age);
-    
+   printf("What's your name?\n");
+   scanf("%[^\n]s", &name);
+   
+   printf("How old are you?\n");
+   scanf("%d", &age);
+   print_name_age(name, age);
 }
 
-void print_name_and_age(string name, int age)
+void print_name_age(char name[], int age)
 {
-    printf("%s is %d years old\n", name, age);
+   printf("%s is %d years old!\n", name, age);
 }
